@@ -1,0 +1,86 @@
+/* 
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import java.io.IOException;
+import java.util.Locale;
+import java.util.Map;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Comparator;
+import java.util.List;
+import java.util.ArrayList;
+
+/**
+ *  Merges segments of approximately equal size, subject to
+ *  an allowed number of segments per tier.  This is similar
+ *  to {@link LogByteSizeMergePolicy}, except this merge
+ *  policy is able to merge non-adjacent segment, and
+ *  separates how many segments are merged at once ({@link
+ *  #setMaxMergeAtOnce}) from how many segments are allowed
+ *  per tier ({@link #setSegmentsPerTier}).  This merge
+ *  policy also does not over-merge (i.e. cascade merges). 
+ *
+ *  <p>For normal merging, this policy first computes a
+ *  "budget" of how many segments are allowed to be in the
+ *  index.  If the index is over-budget, then the policy
+ *  sorts segments by decreasing size (pro-rating by percent
+ *  deletes), and then finds the least-cost merge.  Merge
+ *  cost is measured by a combination of the "skew" of the
+ *  merge (size of largest segment divided by smallest segment),
+ *  total merge size and percent deletes reclaimed,
+ *  so that merges with lower skew, smaller size
+ *  and those reclaiming more deletes, are
+ *  favored.
+ *
+ *  <p>If a merge will produce a segment that's larger than
+ *  {@link #setMaxMergedSegmentMB}, then the policy will
+ *  merge fewer segments (down to 1 at once, if that one has
+ *  deletions) to keep the segment size under budget.
+ *      
+ *  <p><b>NOTE</b>: this policy freely merges non-adjacent
+ *  segments; if this is a problem, use {@link
+ *  LogMergePolicy}.
+ *
+ *  <p><b>NOTE</b>: This policy always merges by byte size
+ *  of the segments, always pro-rates by percent deletes,
+ *  and does not apply any maximum segment size during
+ *  forceMerge (unlike {@link LogByteSizeMergePolicy}).
+ *
+ *  @lucene.experimental
+ */
+
+dksfkdf
+fdskfd 
+
+/* 
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
